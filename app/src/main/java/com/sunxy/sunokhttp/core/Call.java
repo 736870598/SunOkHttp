@@ -66,8 +66,11 @@ public class Call {
      * 同步执行
      */
     public Response enqueue() throws IOException{
-        client.dispatcher().enqueue(this);
         try {
+            if (executed){
+                throw new IllegalStateException("已经执行过了。");
+            }
+            client.dispatcher().enqueue(this);
             return getResponse();
         }finally {
             client.dispatcher().finished(this);

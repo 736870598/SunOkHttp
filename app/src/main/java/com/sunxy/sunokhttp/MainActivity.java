@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         httpClient = new HttpClient.Builder().repeat(3).build();
     }
 
+    /**
+     * 异步请求
+     */
     public void get(View view){
         Request request = new Request.Builder()
                 .url("http://www.kuaidi100.com/query?type=yuantong&postid=222222222")
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * 同步请求
+     */
     public void getSync(View view){
         new Thread(new Runnable() {
             @Override

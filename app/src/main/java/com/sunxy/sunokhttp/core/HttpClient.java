@@ -39,7 +39,7 @@ public class HttpClient {
 
 
     /**
-     * 构造者
+     * 构造者模式
      */
     public static final class Builder{
         Dispatcher dispatcher;

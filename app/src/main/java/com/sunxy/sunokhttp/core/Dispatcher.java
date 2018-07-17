@@ -23,11 +23,11 @@ public class Dispatcher {
     //同时请求的相同的host的最大
     private int maxRequestsPreHost = 5;
 
-    //等待执行队列
+    //等待异步执行队列
     private Deque<Call.AsyncCall> readyAsyncCalls = new ArrayDeque<>();
-    //正在执行异步队列
+    //正在异步执行队列
     private Deque<Call.AsyncCall> runningAsyncCalls = new ArrayDeque<>();
-    //正在执行同步队列
+    //正在同步执行队列
     private Deque<Call> runningSyncCalls = new ArrayDeque<>();
     //线程池
     private ExecutorService executorService;
